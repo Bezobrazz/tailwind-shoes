@@ -4,7 +4,9 @@ const ShoeDetail = () => {
     <div className="flex flex-col lg:flex-row-reverse space-y-4">
       <div className="flex-1 ">
         Image
-        <img src={nike1} alt="" />
+        <div className="bg-gradient-to-br from-[#F637CF] from-5% via-[#E3D876] via-40% to-[#4DD4C6]">
+          <img src={nike1} alt="" />
+        </div>
       </div>
       <div className="flex-1 space-y-6">
         <h1 className="text-5xl font-black md:text-9xl">Nike Air max 270</h1>
