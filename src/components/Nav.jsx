@@ -13,7 +13,7 @@ const Nav = () => {
 
   const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
   return (
-    <nav className="flex flex-wrap justify-between items-center">
+    <nav className="z-index-10 relative flex flex-wrap justify-between items-center">
       <a href="#">
         <NikeLogo className="h-20 w-20" />
       </a>
@@ -23,25 +23,25 @@ const Nav = () => {
       >
         <RxHamburgerMenu size={25} />
       </button>
-      <div className="w-full lg:w-auto">
-        {isMobileMenu && (
-          <ul className="bg-gray-50 text-lg border border-gray-100 rounded-lg p-4 flex flex-col lg:flex-row lg:bg-transparent lg:border-none lg:space-x-8">
-            {ROUTES.map((route, i) => {
-              return (
-                <li
-                  className={`px-3 py-2 cursor-pointer rounded ${
-                    i === 0
-                      ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
-                      : "hover:bg-gray-100"
-                  }`}
-                  key={nanoid()}
-                >
-                  {route}
-                </li>
-              );
-            })}
-          </ul>
-        )}
+      <div
+        className={`${isMobileMenu ? "" : "hidden"} w-full lg:w-auto lg:block`}
+      >
+        <ul className="bg-gray-50 text-lg border border-gray-100 rounded-lg p-4 flex flex-col lg:flex-row lg:bg-transparent lg:border-none lg:space-x-8">
+          {ROUTES.map((route, i) => {
+            return (
+              <li
+                className={`px-3 py-2 cursor-pointer rounded ${
+                  i === 0
+                    ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
+                    : "hover:bg-gray-100"
+                }`}
+                key={nanoid()}
+              >
+                {route}
+              </li>
+            );
+          })}
+        </ul>
       </div>
 
       <div className="fixed left-4 bottom-4 lg:static">
