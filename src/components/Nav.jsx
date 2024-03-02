@@ -44,8 +44,8 @@ const Nav = () => {
         </ul>
       </div>
 
-      <div className="fixed left-4 bottom-4 lg:static lg:mr-8">
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md cursor-pointer">
+      <div className="transition active:scale-75 fixed left-4 bottom-4 lg:static lg:mr-8 cursor-pointer">
+        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md ">
           <TbShoppingBag />
         </div>
       </div>
