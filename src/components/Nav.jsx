@@ -4,7 +4,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { nanoid } from "nanoid";
 import { useState } from "react";
 
-const Nav = () => {
+const Nav = ({ onClickShoppingButton }) => {
   const [isMobileMenu, setisMobileMenu] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -45,9 +45,12 @@ const Nav = () => {
       </div>
 
       <div className="transition active:scale-75 fixed left-4 bottom-4 lg:static lg:mr-8 cursor-pointer">
-        <div className="flex-center h-12 w-12 rounded-full bg-white shadow-md ">
+        <button
+          onClick={onClickShoppingButton}
+          className="flex-center h-12 w-12 rounded-full bg-white shadow-md "
+        >
           <TbShoppingBag />
-        </div>
+        </button>
       </div>
     </nav>
   );
