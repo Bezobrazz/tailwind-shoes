@@ -1,10 +1,13 @@
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-const Select = ({ title, options }) => {
+import { twMerge } from "tw-merge";
+const Select = ({ title, options, className }) => {
   return (
     <div className="relative">
       <select
         defaultValue={""}
-        className="w-24 appearance-none border border-gray-300 bg-white p-4 cursor-pointer"
+        className={twMerge(
+          `w-24 appearance-none border border-gray-300 bg-white p-4 cursor-pointer ${className}`
+        )}
       >
         <option value="" disabled hidden>
           {title}

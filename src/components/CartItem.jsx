@@ -1,6 +1,7 @@
 import { CiTrash } from "react-icons/ci";
 import Select from "./Select.jsx";
 import { SIZES, QTY } from "../constants.js";
+
 const CartItem = ({ item }) => {
   return (
     <div className="cursor-pointer bg-gray-50 hover:bg-[#DAFFA2] p-2 space-y-2">
@@ -17,11 +18,11 @@ const CartItem = ({ item }) => {
         <div className="flex space-x-6 pl-32">
           <div>
             <p className="font-bold">SIZE</p>
-            <Select title="" options={SIZES} />
+            <Select title="" options={SIZES} className={"w-16 p-1"} />
           </div>
           <div>
             <p className="font-bold">QTY</p>
-            <Select title="" options={QTY} />
+            <Select title="" options={QTY} className={"w-16 p-1"} />
           </div>
         </div>
         <button>
