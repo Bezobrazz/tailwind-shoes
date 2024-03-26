@@ -1,6 +1,6 @@
 import Card from "./Card";
 
-const NewArrivalsSection = ({ items }) => {
+const NewArrivalsSection = ({ items, onClickCard }) => {
   return (
     <div className=" mt-20">
       <div className="flex-center mb-10">
@@ -12,7 +12,7 @@ const NewArrivalsSection = ({ items }) => {
         {items.map((item) => (
           <li key={item.id}>
             {" "}
-            <Card item={item} />
+            <Card item={item} onClick={onClickCard} />
           </li>
         ))}
       </ul>
