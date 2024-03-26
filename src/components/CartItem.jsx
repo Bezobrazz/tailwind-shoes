@@ -19,7 +19,7 @@ const CartItem = ({ item: { product, qty, size } }) => {
           <div>
             <p className="font-bold dark:text-white">SIZE</p>
             <Select
-              defaultValue={size}
+              value={size}
               title=""
               options={SIZES}
               className={"w-16 p-1 pl-2"}
@@ -28,7 +28,7 @@ const CartItem = ({ item: { product, qty, size } }) => {
           <div>
             <p className="font-bold dark:text-white">QTY</p>
             <Select
-              defaultValue={qty}
+              value={qty}
               title=""
               options={QTY}
               className={"w-16 p-1 pl-2"}
