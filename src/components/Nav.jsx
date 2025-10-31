@@ -7,6 +7,7 @@ import { useState } from "react";
 const Nav = ({
   onClickShoppingButton,
   onClickAbout,
+  onClickServices,
   cartItemsCount = 0,
 }) => {
   const [isMobileMenu, setisMobileMenu] = useState(false);
@@ -42,6 +43,9 @@ const Nav = ({
             const handleClick = () => {
               if (route === "About" && onClickAbout) {
                 onClickAbout();
+              }
+              if (route === "Services" && onClickServices) {
+                onClickServices();
               }
             };
 
