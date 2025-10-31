@@ -12,6 +12,7 @@ import { nanoid } from "nanoid";
 import ShoeDetailsModal from "./components/ShoeDetailsModal.jsx";
 import AboutModal from "./components/AboutModal.jsx";
 import ServicesModal from "./components/ServicesModal.jsx";
+import PricingModal from "./components/PricingModal.jsx";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -22,6 +23,7 @@ export default function App() {
   const [modalShoe, setModalShoe] = useState(null);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isPricingOpen, setIsPricingOpen] = useState(false);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
@@ -105,6 +107,7 @@ export default function App() {
         cartItemsCount={cartItems.length}
         onClickAbout={() => setIsAboutOpen(true)}
         onClickServices={() => setIsServicesOpen(true)}
+        onClickPricing={() => setIsPricingOpen(true)}
       />
       <ShoeDetail
         shoe={currentShoe}
@@ -124,6 +127,10 @@ export default function App() {
       <ServicesModal
         isOpen={isServicesOpen}
         onClose={() => setIsServicesOpen(false)}
+      />
+      <PricingModal
+        isOpen={isPricingOpen}
+        onClose={() => setIsPricingOpen(false)}
       />
       <div className="fixed bottom-4 right-4 ">
         <button

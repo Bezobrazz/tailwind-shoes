@@ -8,6 +8,7 @@ const Nav = ({
   onClickShoppingButton,
   onClickAbout,
   onClickServices,
+  onClickPricing,
   cartItemsCount = 0,
 }) => {
   const [isMobileMenu, setisMobileMenu] = useState(false);
@@ -46,6 +47,9 @@ const Nav = ({
               }
               if (route === "Services" && onClickServices) {
                 onClickServices();
+              }
+              if (route === "Pricing" && onClickPricing) {
+                onClickPricing();
               }
             };
 
