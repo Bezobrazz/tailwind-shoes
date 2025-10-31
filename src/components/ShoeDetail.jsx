@@ -2,7 +2,7 @@ import { QTY, SIZES } from "../constants";
 import Select from "./Select";
 import { useState } from "react";
 
-const ShoeDetail = ({ shoe, onClickAdd }) => {
+const ShoeDetail = ({ shoe, onClickAdd, onClickDetails }) => {
   const [form, setForm] = useState({ qty: null, size: null });
   return (
     <div className="flex flex-col lg:flex-row-reverse space-y-4 dark:text-white">
@@ -38,12 +38,13 @@ const ShoeDetail = ({ shoe, onClickAdd }) => {
           >
             Add to cart
           </button>
-          <a
+          <button
+            onClick={() => onClickDetails && onClickDetails(shoe)}
             className="text-lg font-bold underline underline-offset-4"
-            href="#"
+            type="button"
           >
             View details
-          </a>
+          </button>
         </div>
       </div>
     </div>
