@@ -13,6 +13,7 @@ import ShoeDetailsModal from "./components/ShoeDetailsModal.jsx";
 import AboutModal from "./components/AboutModal.jsx";
 import ServicesModal from "./components/ServicesModal.jsx";
 import PricingModal from "./components/PricingModal.jsx";
+import ContactModal from "./components/ContactModal.jsx";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -24,6 +25,7 @@ export default function App() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
@@ -108,6 +110,7 @@ export default function App() {
         onClickAbout={() => setIsAboutOpen(true)}
         onClickServices={() => setIsServicesOpen(true)}
         onClickPricing={() => setIsPricingOpen(true)}
+        onClickContact={() => setIsContactOpen(true)}
       />
       <ShoeDetail
         shoe={currentShoe}
@@ -131,6 +134,10 @@ export default function App() {
       <PricingModal
         isOpen={isPricingOpen}
         onClose={() => setIsPricingOpen(false)}
+      />
+      <ContactModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
       />
       <div className="fixed bottom-4 right-4 ">
         <button
