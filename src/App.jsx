@@ -94,7 +94,10 @@ export default function App() {
 
   return (
     <div className="animate-fadeIn p-10 xl:px-24 dark:bg-night">
-      <Nav onClickShoppingButton={() => setIsSidebarOpen(true)} />
+      <Nav
+        onClickShoppingButton={() => setIsSidebarOpen(true)}
+        cartItemsCount={cartItems.length}
+      />
       <ShoeDetail shoe={currentShoe} onClickAdd={addToCart} />
       <NewArrivalsSection items={SHOE_LIST} onClickCard={setCurrentShoe} />
       <Sidebar
