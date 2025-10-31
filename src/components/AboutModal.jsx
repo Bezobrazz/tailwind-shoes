@@ -5,9 +5,9 @@ const AboutModal = ({ isOpen, onClose }) => {
     <ModalShell
       isOpen={isOpen}
       onClose={onClose}
-      contentClassName="grid h-full max-h-[85vh] grid-cols-1 gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12"
+      contentClassName="grid min-h-full max-h-full overflow-y-auto grid-cols-1 gap-10 md:grid-cols-[0.95fr_1.05fr] md:gap-12"
     >
-      <div className="flex flex-col justify-between bg-gradient-to-br from-[#F637CF]/15 via-transparent to-[#4DD4C6]/20 px-8 py-16 md:px-12">
+      <div className="flex flex-col justify-between bg-gradient-to-br from-[#F637CF]/15 via-transparent to-[#4DD4C6]/20 px-8 pb-16 pt-20 md:px-12 md:py-16">
         <div className="space-y-6">
           <p className="text-xs font-semibold uppercase tracking-[0.28em] text-gray-500 dark:text-gray-300">
             About ArcStep
@@ -38,7 +38,7 @@ const AboutModal = ({ isOpen, onClose }) => {
           </div>
         </div>
       </div>
-      <div className="flex max-h-[85vh] flex-col gap-8 overflow-y-auto px-8 pb-12 pt-20 md:px-12">
+      <div className="flex max-h-[85vh] flex-col gap-8 px-8 pb-16 pt-20 md:px-12">
         <div className="grid gap-6 md:grid-cols-2">
           <div className="rounded-[24px] bg-white/80 p-6 shadow-[0_18px_45px_-20px_rgba(13,17,32,0.35)] dark:bg-night dark:shadow-none">
             <h3 className="text-lg font-semibold text-night dark:text-white">

@@ -26,7 +26,7 @@ const ModalShell = ({
     >
       <div
         className={twMerge(
-          "relative w-full max-w-[min(70vw,1100px)] max-h-[85vh] overflow-hidden rounded-[32px] bg-white shadow-[0_30px_60px_-20px_rgba(13,17,32,0.55)] dark:bg-night-50",
+          "relative w-full max-w-[min(70vw,1100px)] max-h-[85vh] overflow-y-auto overflow-x-hidden rounded-[32px] bg-white shadow-[0_30px_60px_-20px_rgba(13,17,32,0.55)] dark:bg-night-50",
           containerClassName
         )}
       >
@@ -39,7 +39,7 @@ const ModalShell = ({
         </button>
         <div
           className={twMerge(
-            "h-full bg-gradient-to-br from-[#F637CF]/10 via-transparent to-[#4DD4C6]/10",
+            "bg-gradient-to-br from-[#F637CF]/10 via-transparent to-[#4DD4C6]/10",
             contentClassName
           )}
         >

@@ -8,9 +8,9 @@ const ShoeDetailsModal = ({ shoe, onClose }) => {
     <ModalShell
       isOpen={Boolean(shoe)}
       onClose={onClose}
-      contentClassName="grid h-full max-h-[85vh] grid-cols-1 gap-8 md:grid-cols-[1fr_1.15fr] md:gap-12"
+      contentClassName="grid min-h-full max-h-full overflow-y-auto grid-cols-1 gap-8 md:grid-cols-[1fr_1.15fr] md:gap-12"
     >
-      <div className="flex items-center justify-center bg-gradient-to-br from-[#F637CF]/20 via-transparent to-[#4DD4C6]/20 p-6 md:p-12">
+      <div className="flex items-center justify-center bg-gradient-to-br from-[#F637CF]/20 via-transparent to-[#4DD4C6]/20 px-8 pb-16 pt-20 md:px-12 md:py-16">
         <div className="relative flex aspect-[4/3] w-full max-w-sm items-center justify-center rounded-[28px] bg-gradient-to-br from-[#F637CF] from-10% via-[#E3D876] via-50% to-[#4DD4C6] p-6">
           <span className="absolute inset-0 rounded-[28px] border border-white/30 dark:border-night" />
           <img
@@ -20,7 +20,7 @@ const ShoeDetailsModal = ({ shoe, onClose }) => {
           />
         </div>
       </div>
-      <div className="flex max-h-[85vh] flex-col gap-6 overflow-y-auto px-6 pb-8 pt-16 md:px-10 md:py-12">
+      <div className="flex max-h-[85vh] flex-col gap-6 px-8 pb-16 pt-20 md:px-10 md:py-12 overflow-y-auto">
         <div className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-gray-500 dark:text-gray-300">
             Featured sneaker
