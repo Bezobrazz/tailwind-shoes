@@ -20,7 +20,7 @@ const Nav = ({
 
   const ROUTES = ["Home", "About", "Services", "Pricing", "Contact"];
   return (
-    <nav className="z-index-10 relative flex flex-wrap justify-between items-center">
+    <nav className="relative z-10 flex flex-wrap items-center justify-between">
       <a href="#">
         <NikeLogo className="h-20 w-20 dark:fill-white" />
       </a>
