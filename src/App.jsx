@@ -10,6 +10,7 @@ import Cart from "./components/Cart.jsx";
 import ToastContainer from "./components/ToastContainer.jsx";
 import { nanoid } from "nanoid";
 import ShoeDetailsModal from "./components/ShoeDetailsModal.jsx";
+import AboutModal from "./components/AboutModal.jsx";
 
 export default function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function App() {
   const [toasts, setToasts] = useState([]);
   const toastTimersRef = useRef({});
   const [modalShoe, setModalShoe] = useState(null);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("isDarkMode");
@@ -99,6 +101,7 @@ export default function App() {
       <Nav
         onClickShoppingButton={() => setIsSidebarOpen(true)}
         cartItemsCount={cartItems.length}
+        onClickAbout={() => setIsAboutOpen(true)}
       />
       <ShoeDetail
         shoe={currentShoe}
@@ -113,10 +116,8 @@ export default function App() {
         <Cart cartItems={cartItems} onClickTrash={removeFromCart} />
       </Sidebar>
       <ToastContainer toasts={toasts} onDismiss={dismissToast} />
-      <ShoeDetailsModal
-        shoe={modalShoe}
-        onClose={() => setModalShoe(null)}
-      />
+      <ShoeDetailsModal shoe={modalShoe} onClose={() => setModalShoe(null)} />
+      <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
       <div className="fixed bottom-4 right-4 ">
         <button
           onClick={toggleDarkMode}

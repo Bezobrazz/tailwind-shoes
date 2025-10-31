@@ -4,7 +4,11 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { nanoid } from "nanoid";
 import { useState } from "react";
 
-const Nav = ({ onClickShoppingButton, cartItemsCount = 0 }) => {
+const Nav = ({
+  onClickShoppingButton,
+  onClickAbout,
+  cartItemsCount = 0,
+}) => {
   const [isMobileMenu, setisMobileMenu] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -28,14 +32,25 @@ const Nav = ({ onClickShoppingButton, cartItemsCount = 0 }) => {
       >
         <ul className="bg-gray-50 text-lg border border-gray-100 rounded-lg p-4 flex flex-col lg:flex-row lg:bg-transparent lg:border-none lg:space-x-8 lg:dark:text-white">
           {ROUTES.map((route, i) => {
+            const isPrimary = i === 0;
+            const itemClasses = `px-3 py-2 cursor-pointer rounded lg:hover:bg-transparent lg:hover:text-blue-500 ${
+              isPrimary
+                ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
+                : "hover:bg-gray-100"
+            } ${(i === 3 || i === 4) && "lg:text-white"}`;
+
+            const handleClick = () => {
+              if (route === "About" && onClickAbout) {
+                onClickAbout();
+              }
+            };
+
             return (
               <li
-                className={`px-3 py-2 cursor-pointer rounded lg:hover:bg-transparent lg:hover:text-blue-500 ${
-                  i === 0
-                    ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500"
-                    : "hover:bg-gray-100"
-                } ${(i === 3 || i === 4) && "lg:text-white"}`}
+                className={itemClasses}
                 key={nanoid()}
+                onClick={handleClick}
+                role={route === "About" ? "button" : undefined}
               >
                 {route}
               </li>
