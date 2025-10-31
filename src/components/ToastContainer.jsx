@@ -4,7 +4,7 @@ const ToastContainer = ({ toasts, onDismiss }) => {
   if (!toasts.length) return null;
 
   return (
-    <div className="fixed top-6 right-6 z-[60] flex flex-col space-y-4">
+    <div className="fixed bottom-6 left-6 z-[60] flex flex-col space-y-4">
       {toasts.map((toast) => (
         <Toast
           key={toast.id}
