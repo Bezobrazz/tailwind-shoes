@@ -2,7 +2,11 @@ import { CiTrash } from "react-icons/ci";
 import Select from "./Select.jsx";
 import { SIZES, QTY } from "../constants.js";
 
-const CartItem = ({ item: { product, qty, size }, onClickTrash }) => {
+const CartItem = ({
+  item: { product, qty, size },
+  onClickTrash,
+  onChangeItem,
+}) => {
   return (
     <div className="cursor-pointer bg-gray-50 dark:bg-transparent dark:hover:bg-night-50 hover:bg-[#DAFFA2] p-2 space-y-2">
       <div className="flex   space-x-2">
@@ -23,6 +27,9 @@ const CartItem = ({ item: { product, qty, size }, onClickTrash }) => {
               title=""
               options={SIZES}
               className={"w-16 p-1 pl-2"}
+              onChange={(selected) =>
+                onChangeItem && onChangeItem(product.id, { size: Number(selected) })
+              }
             />
           </div>
           <div>
@@ -32,6 +39,9 @@ const CartItem = ({ item: { product, qty, size }, onClickTrash }) => {
               title=""
               options={QTY}
               className={"w-16 p-1 pl-2"}
+              onChange={(selected) =>
+                onChangeItem && onChangeItem(product.id, { qty: Number(selected) })
+              }
             />
           </div>
         </div>

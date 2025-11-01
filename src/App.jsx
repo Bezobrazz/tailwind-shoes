@@ -53,11 +53,9 @@ export default function App() {
   };
 
   const removeFromCart = (productId) => {
-    const updatedCartItems = [...cartItems];
-    const existingItemIndex = cartItems.findIndex(
-      (item) => item.product.id === productId
+    const updatedCartItems = cartItems.filter(
+      (item) => item.product.id !== productId
     );
-    updatedCartItems.splice(existingItemIndex, 1);
     setCartItems(updatedCartItems);
   };
 
@@ -122,7 +120,17 @@ export default function App() {
         isOpen={isSidebarOpen}
         onClickClose={() => setIsSidebarOpen(false)}
       >
-        <Cart cartItems={cartItems} onClickTrash={removeFromCart} />
+        <Cart
+          cartItems={cartItems}
+          onClickTrash={removeFromCart}
+          onChangeItem={(productId, updates) => {
+            setCartItems((prev) =>
+              prev.map((item) =>
+                item.product.id === productId ? { ...item, ...updates } : item
+              )
+            );
+          }}
+        />
       </Sidebar>
       <ToastContainer toasts={toasts} onDismiss={dismissToast} />
       <ShoeDetailsModal shoe={modalShoe} onClose={() => setModalShoe(null)} />

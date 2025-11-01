@@ -1,6 +1,6 @@
 import CartItem from "./CartItem.jsx";
 
-const Cart = ({ cartItems, onClickTrash }) => {
+const Cart = ({ cartItems, onClickTrash, onChangeItem }) => {
   return (
     <>
       <h2 className="dark:text-white text-2xl font-bold mb-10">Cart</h2>
@@ -13,7 +13,11 @@ const Cart = ({ cartItems, onClickTrash }) => {
           <ul className="space-y-5">
             {cartItems.map((cartItem) => (
               <li key={cartItem.product.id}>
-                <CartItem item={cartItem} onClickTrash={onClickTrash} />
+                <CartItem
+                  item={cartItem}
+                  onClickTrash={onClickTrash}
+                  onChangeItem={onChangeItem}
+                />
               </li>
             ))}
           </ul>
